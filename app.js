@@ -17,48 +17,48 @@ const total = document.querySelector('#total');
 
   //declare state variable counters
 const hidingPlaces = [
-  'left',
-  'middle',
-  'right'
+    'left',
+    'middle',
+    'right'
 ];
 
 let correctCount = 0;
 let totalCount = 0;
 
   //click events
-  for (const button of buttons) {
+for (const button of buttons) {
     button.addEventListener('click', () => {
-      let correctSpot = randomCup(hidingPlaces);
-      handleGuess(button.textContent, correctSpot);
+        let correctSpot = randomCup(hidingPlaces);
+        handleGuess(button.textContent, correctSpot);
     });
-  }
+}
 
   //functions
-  function randomCup(arr) {
+function randomCup(arr) {
     let index = Math.floor(Math.random() * arr.length);
     return arr[index];
-  }
+}
 
-  function handleGuess(guess, correctSpot) {
+function handleGuess(guess, correctSpot) {
     resetCups();
     totalCount++;
     const correctCup = document.querySelector('.' + correctSpot);
 
     correctCup.classList.add('show');
-    console.log(guess, correctSpot)
+    console.log(guess, correctSpot);
     if (guess === correctSpot) {
-      correctCount++;
+        correctCount++;
     }
     correct.textContent = correctCount;
     incorrect.textContent = totalCount - correctCount;
     total.textContent = totalCount;
-  }
+}
 
-  function resetCups() {
+function resetCups() {
     for (const cup of cups) {
-      cup.classList.remove('show');
+        cup.classList.remove('show');
     }
-  }
+}
 
 
 
