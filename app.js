@@ -14,6 +14,7 @@ const buttons = document.querySelectorAll('button');
 const correct = document.querySelector('#correct');
 const incorrect = document.querySelector('#incorrect');
 const total = document.querySelector('#total');
+const ball = document.querySelectorAll('img');
 
   //declare state variable counters
 const hidingPlaces = [
@@ -45,7 +46,6 @@ function handleGuess(guess, correctSpot) {
     const correctCup = document.querySelector('.' + correctSpot);
 
     correctCup.classList.add('show');
-    console.log(guess, correctSpot);
     if (guess === correctSpot) {
         correctCount++;
     }
